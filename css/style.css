@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	color: pink;
+	color: teal;
 	background: teal;
 	font-size: 16px;
 }
@@ -13,6 +13,11 @@ main {
 	margin: 0 auto;
 	background: aliceblue;
 	padding:5rem;
+}
+
+svg {
+	width: 300px;
+	transform-origin: 50 50;
 }
 
 #head {
@@ -27,14 +32,13 @@ main {
 	fill: navy;
 }
 
-#leftHeart, #rightHeart {
-	transform: scale(0);
-}
-#leftBrow, #rightBrow {
+
+
+/*----Brow Lift-----*/
+.brows #leftBrow, .brows #rightBrow {
 	animation-name: browLift;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
-	/*animation-direction: alternate;  */
 	animation-iteration-count: 2;
 	animation-timing-function: ease-in-out ;
 }
@@ -50,3 +54,60 @@ main {
 		transform: translateY(0);
 	}
 }
+
+/*-----Heart Eyes-----*/
+#leftHeart, #rightHeart {
+	transform: scale(.10);
+	transform-origin: center center;
+}
+
+.hearts #leftHeart, .hearts #rightHeart {
+	/*animation: heartEyes 500ms ease-in 0 2 forwards;*/
+/*	animation-name: heartEyes;
+	animation-duration: .5s;*/
+	transform: scale(.1);
+	animation-name: heartEyes;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 2;
+	animation-timing-function: ease-in-out ;
+	display: block;
+}
+
+@keyframes heartEyes {
+	0% {
+		transform: scale(.1) ;
+
+	}
+	50% {
+		transform: scale(1.2);
+		/*-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		-o-transform: scale(1.2);*/
+	}
+	100% {
+		transform: scale(0.1);
+
+	}
+}
+/* @keyframes duration | timing-function | delay | 
+iteration-count | direction | fill-mode | play-state | name */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @keyframes duration | timing-function | delay | 
+iteration-count | direction | fill-mode | play-state | name */
+
