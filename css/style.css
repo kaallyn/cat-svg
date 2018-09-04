@@ -35,12 +35,26 @@ svg {
 
 
 /*----Brow Lift-----*/
+
+#leftBrow {
+	/*transform: rotate(-50deg);*/
+	transform-origin: center center;
+	/*transform: translateY(-2rem) rotate(-5deg);*/
+}
+
+#rightBrow {
+	/*transform: rotate(-50deg);*/
+	transform-origin: center right;
+	/*transform: translateY(-.35rem) rotate(7deg);*/
+}
+
 .brows #leftBrow, .brows #rightBrow {
 	animation-name: browLift;
 	animation-duration: .5s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 2;
 	animation-timing-function: ease-in-out ;
+
 }
 
 @keyframes browLift {
@@ -58,40 +72,86 @@ svg {
 /*-----Heart Eyes-----*/
 #leftHeart, #rightHeart {
 	transform: scale(.10);
-	transform-origin: center center;
+	transform-origin: 76.5% 51%;
+	visibility: hidden;
+}
+
+#leftHeart {
+	transform-origin: 24% 51%;
 }
 
 .hearts #leftHeart, .hearts #rightHeart {
-	/*animation: heartEyes 500ms ease-in 0 2 forwards;*/
-/*	animation-name: heartEyes;
-	animation-duration: .5s;*/
+	animation: heartEyes 1000ms ease-in 2 forwards;
 	transform: scale(.1);
-	animation-name: heartEyes;
-	animation-duration: .5s;
 	animation-fill-mode: forwards;
-	animation-iteration-count: 2;
-	animation-timing-function: ease-in-out ;
-	display: block;
+	visibility: visible;
 }
 
 @keyframes heartEyes {
 	0% {
 		transform: scale(.1) ;
-
+	}
+	25% {
+		transform: scale(1.2);
 	}
 	50% {
+		transform: scale(0.1);
+	}
+	75% {
 		transform: scale(1.2);
-		/*-webkit-transform: scale(1.2);
-		-moz-transform: scale(1.2);
-		-o-transform: scale(1.2);*/
 	}
 	100% {
 		transform: scale(0.1);
-
 	}
 }
-/* @keyframes duration | timing-function | delay | 
-iteration-count | direction | fill-mode | play-state | name */
+
+.hearts #leftBrow {
+	animation: leftHeartBrows 1000ms ease-in-out 1 forwards;
+	animation-fill-mode: forwards;
+
+}
+
+.hearts #rightBrow {
+	animation: rightHeartBrows 1000ms ease-in-out 1 forwards;
+	animation-fill-mode: forwards;
+}
+
+@keyframes leftHeartBrows {
+	0% {
+		transform: translateY(0);
+	}
+	30%, 75% {
+		transform: translateY(-2rem) rotate(-5deg);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+}
+
+@keyframes rightHeartBrows {
+	0% {
+		transform: translateY(0);
+	}
+	30%, 75% {
+		transform: translateY(-.35rem) rotate(7deg);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+}
+#leftEye, #rightEye {
+	transition: all 100ms ease-in-out;
+}
+
+.hearts #leftEye, .hearts #rightEye {
+	opacity: 0;
+}
+
+@keyframes heartShrinkEyes {
+
+} 
+
+
 
 
 
